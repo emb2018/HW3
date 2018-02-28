@@ -25,13 +25,39 @@
             <img class="card-img-top bg-primary img-fluid" src="http://openweathermap.org/img/w/01d.png">
             <div class="card-body">
               <h4 class="card-title">Paris</h4>
-              <p class="card-text">It is 81 degrees outside.</p>
-              <a id="get_forecast" href="#" class="btn btn-primary">Get Current Temperature</a>
+
+              <a id="demo" class="card-text">It is 81 degrees outside.</a>
+
+              <a onclick="myFunction()" id="get_forecast" href="#" class="btn btn-primary">Get Current Temperature</a>
             </div>
           </div>
         </div>
         <div class="col-sm-8">
           <p class="lead">Can you modify <code>weather.js</code> to display the current weather conditions outside?</p>
+
+
+                        <script>
+let test = {"coord":{"lon":2.35,"lat":48.86},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":26.6,"pressure":1013,"humidity":38,"temp_min":26.6,"temp_max":26.6},"visibility":10000,"wind":{"speed":20.8,"deg":80},"clouds":{"all":0},"dt":1519817400,"sys":{"type":1,"id":5610,"message":0.0058,"country":"FR","sunrise":1519799632,"sunset":1519839180},"id":2978048,"name":"Saint-Merri","cod":200}
+
+                        jQuery (
+                          function()
+                          {
+                        let url = "https://api.openweathermap.org/data/2.5/weather?lat=48.8566&lon=2.3522&appid=4ce6f502d38ddae567bf1702b05e168c&units=imperial";
+                        $.get(url, function(data2) {
+
+
+                        })
+                      })
+                        </script>
+
+                        <script>
+                        function myFunction() {
+                            document.getElementById("demo").innerHTML = "It is "+Math.round(test.main.temp)+" degrees outside";
+                        }
+                        </script>
+
+
+
 
           <ol>
             <li>
@@ -50,13 +76,17 @@
                 how to finish the task.</blockquote></li>
                 <li>The temperature value should be rounded to the nearest integer.</li>
               </ul>
+
+
+
+
             <li><p><strong>6 points: Use your actual location to update the widget.</strong></p>
               <ul>
                 <li>Use the browser's <code>navigator.geolocation</code> object to obtain the
-                  user's actual real-time latitude and longitude. 
+                  user's actual real-time latitude and longitude.
                   <blockquote>You'll need to call the <code>getCurrentPosition()</code>
                   function and provide a callback function in order to receive the user's latitude and longitude data.
-                  </blockquote>
+                    </blockquote
               </li>
                 <li>When you're finished, both the temperature and city name should reflect the your location and
                 current weather.</li>
@@ -70,6 +100,8 @@
         </div>
       </div>
     </div>
+
+
 
     <script type="text/javascript" src="weather.js"> </script>
   </body>
